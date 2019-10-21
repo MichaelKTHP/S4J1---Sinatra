@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>The Gossip Project</title>
+  </head>
+  <body>
+    <h1>Mon super site de gossip, depuis le dossier views !</h1>
+
+   <% #Comme les liens sont identiques sauf pour le numéro, on crée une
+   #variable dans le lien avec le numéro d'index %>
+    
+    <a href="/gossips/new/">Va donc sur ce lien pour créer un potin</a>
+    <h3> Voici la liste des potins de THP ! </h3>
+    <% gossips.each_with_index do |gossip,index| %>
+        <h4>
+          <%= gossip.author %>
+      </h4>
+          
+          <%= gossip.content %>
+          <br/>
+          <a href="/gossips/<%=index%>/">Lien</a>  
+          <br/>
+          <a href="/gossips/<%=index%>/edit">Editer</a>  
+
+        
+     
+
+      
+      <% end %> 
+
+  </body>
+</html>
